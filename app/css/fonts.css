@@ -1,0 +1,18 @@
+@font-face {
+	font-family: 'OpenSans-Regular';
+	src: url('../fonts/OpenSans-Regular/OpenSans-Regular.ttf');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'MyriadPro-Regular';
+	src: url('../fonts/MyriadPro-Regular/MyriadPro-Regular.otf');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'Lobster_1_4';
+	src: url('../fonts/Lobster_1_4/Lobster_1_4.otf');
+	font-style: normal;
+	font-weight: normal;
+}
