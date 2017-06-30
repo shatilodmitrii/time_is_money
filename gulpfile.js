@@ -67,7 +67,7 @@ gulp.task('build',['clean','img'], function(){
 		.pipe(gulp.dest('dist/js'))
 
 	buildFonts = gulp.src('app/fonts/**/*')
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist/fonts'))
 
 	buildCss = gulp.src(['app/css/**/*.css',
 						'!app/css/libs.css'])

@@ -1,6 +1,10 @@
 $blue: #44c0c2
 $black: #485460
 
+html
+	width: 100%
+	max-width: 100%
+	overflow-x: hidden
 .container
 	max-width: 1170px
 	margin: 0 auto
@@ -14,15 +18,64 @@ body
 				&:hover
 					text-decoration: none
 header
+	position: relative
+	text-align: center
+	z-index: 9999
 	.top_header
-		top: 0
-		left: 0
-		background: #fff
-		z-index: 10000
+		text-align: center
 		height: 100px
-		overflow: hidden
+		background: #fff
 		.logo
-			padding-left: 10px
+			padding-top: 25px
+			padding-bottom: 25px
+			display: inline-block
+			float: left
+			a
+				font-family: "Lobster_1_4"
+				font-size: 43px
+				color: $blue
+		.menu
+			float: right
+			display: inline-block
+			ul
+				padding: 0
+				margin: 0
+				list-style: none
+				li
+					display: inline-block
+					padding-top: 34px
+					&:hover
+						background-color: #f8f9fb
+					a
+						font-size: 15px
+						color: #484c55
+						font-family: $blue
+						padding: 42px 20px
+						&:hover
+							border-bottom: 3px solid $blue
+							background-color: #f8f9fb
+			.btn_menu
+				display: none
+				border: none
+				background-color: transparent
+				font-size: 30px
+				color: $blue
+				position: absolute
+				top: 10px
+				
+
+
+			
+header.sticky
+	position: fixed
+	width: 100%
+	background-color: #fff
+	z-index: 9999
+	.top_header
+		text-align: center
+		background: #fff
+		height: 60px
+		.logo
 			padding-top: 25px
 			padding-bottom: 25px
 			display: inline-block
@@ -30,6 +83,7 @@ header
 				font-family: "Lobster_1_4"
 				font-size: 43px
 				color: $blue
+				padding-left: -10px
 		.menu
 			float: right
 			ul
@@ -38,15 +92,14 @@ header
 				list-style: none
 				li
 					display: inline-block
-					padding-top: 33px
+					padding-top: 24px
 					&:hover
 						background-color: #f8f9fb
 					a
 						font-size: 15px
-						line-height: 24px
 						color: #484c55
 						font-family: $blue
-						padding: 42px 20px
+						padding: 20px 20px
 						&:hover
 							border-bottom: 3px solid $blue
 							background-color: #f8f9fb
@@ -54,11 +107,7 @@ header
 .slider
 	background: url("../img/bg_header.jpg") no-repeat top center
 	background-size: cover
-	min-height: 579px
-	position: static
-	top: 0
-	left: 0
-	right: 0
+	min-height: 580px
 	.owl-carousel
 		padding-top: 135px
 		text-align: center
@@ -87,35 +136,31 @@ header
 					line-height: 24px
 		.owl-buttons
 			.owl-prev
-				left: 0
-				&:before
-					position: absolute
-					content: "\f104"
-					font-family: FontAwesome
-					color: $blue
-					font-size: 60px
-					height: 50px
-					width: 50px
-					border-radius: 50%
-					background-color: #fff
-					line-height: 45px
-					left: 0px
-					top: 270px
+				background-image: url(../img/left.png)			
+				background-position: 50% 50%
+				background-repeat: no-repeat
+				height: 50px
+				width: 50px
+				border-radius: 50%
+				background-color: #fff
+				margin-top: -150px
+				margin-left: -100px
 			.owl-next
-				&:after
-					position: absolute
-					content: "\f105"
-					font-family: FontAwesome
-					translateX: 180deg
-					color: $blue
-					font-size: 60px
-					height: 50px
-					width: 50px
-					border-radius: 50%
-					background-color: #fff
-					line-height: 45px
-					right: 0px
-					top: 270px
+				background-image: url(../img/left.png)			
+				background-position: 50% 50%
+				transform: scale(-1, 1)
+				background-repeat: no-repeat
+				height: 50px
+				width: 50px
+				border-radius: 50%
+				background-color: #fff
+				margin-top: -50px
+				float: right
+				margin-right: -100px
+
+
+
+	
 .team
 	.top_text_team
 		padding-top: 100px
@@ -149,16 +194,16 @@ header
 	background-color: #f1f1f1
 	padding-top: 120px
 	.service_item
-		width: 32%
+		width: 30%
 		display: inline-block
 		text-align: center
 		&:first-child
-			float: left
 			padding-right: 2%
+			padding-left: 2%
 			p
 		&:last-child
-			float: right
 			padding-left: 2%
+			padding-right: 2%
 		.top_text_serv
 			background-color: $black
 			height: 75px
@@ -199,10 +244,6 @@ header
 	background: url("../img/bd_footer.jpg") no-repeat top center
 	background-size: cover
 	min-height: 688px
-	position: static
-	top: 0
-	left: 0
-	right: 0
 	.contact_top_text
 		padding-top: 100px
 		padding-bottom: 100px
@@ -215,7 +256,6 @@ header
 		width: 48%
 		display: inline-block
 		padding-left: 2%
-
 		.contact_left_text
 			font-size: 24px
 			padding-left: 25px
@@ -248,7 +288,7 @@ header
 			span
 				display: block
 	.cont_right
-		width: 50%
+		width: 48%
 		float: right
 		input
 			width: 42%
@@ -261,14 +301,20 @@ header
 			padding-left: 4%		
 			margin-bottom: 30px	
 			&:first-child
-				margin-right: 4.2%
+				margin-right: 4%
+			&:focus
+				outline: none
 		textarea
-			width: 93.5%
+			width: 93.1%
 			height: 180px
 			font-size: 14px
 			padding-top: 25px
 			padding-left: 4%
 			margin-bottom: 30px
+			outline: none
+
+			&:focus
+				outline: none
 		button
 			padding: 20px 65px
 			color: #fff
